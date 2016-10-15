@@ -1,7 +1,7 @@
 
 {
-  "name": "My Ionic App",
-  "short_name": "My Ionic App",
+  "name": "Belfast Cares",
+  "short_name": "Belfast Cares",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
