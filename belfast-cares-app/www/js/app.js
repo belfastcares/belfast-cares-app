@@ -49,21 +49,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.profiles', '
           }
         }
       })
-      .state('app.playlists', {
-        url: '/playlists',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/playlists.html',
-            controller: 'PlaylistsCtrl'
-          }
-        }
-      })
-
-      .state('app.events', {
+        .state('app.events', {
         url: '/events',
         views: {
           'menuContent': {
-            templateUrl: 'templates/event_listing.html',
+            templateUrl: 'partials/events/events.html',
             controller: 'EventsCtrl'
           }
         }
@@ -91,33 +81,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.profiles', '
         }
       })
 
-      // .state('employee-index', {
-      //   url: '/employees',
-      //   templateUrl: 'templates/employee-index.html',
-      //   controller: 'EmployeeIndexCtrl'
-      // })
-      //
-      // .state('employee-detail', {
-      //   url: '/employee/:employeeId',
-      //   templateUrl: 'templates/employee-detail.html',
-      //   controller: 'EmployeeDetailCtrl'
-      // })
-      //
-      // .state('employee-reports', {
-      //   url: '/employee/:employeeId/reports',
-      //   templateUrl: 'templates/employee-reports.html',
-      //   controller: 'EmployeeReportsCtrl'
-      // })
-
       .state('app.single', {
-        url: '/playlists/:playlistId',
+        url: '/events/:eventId',
         views: {
           'menuContent': {
-            templateUrl: 'templates/playlist.html',
-            controller: 'PlaylistCtrl'
+            templateUrl: 'partials/events/event.html',
+            controller: 'EventCtrl'
           }
         }
       });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/events');
   });
