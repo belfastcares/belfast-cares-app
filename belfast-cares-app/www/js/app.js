@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.profiles', 'starter.events'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.home', 'starter.profiles', 'starter.events', 'starter.volunteers'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -49,22 +49,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.profiles', '
           }
         }
       })
-      .state('app.playlists', {
-        url: '/playlists',
+        .state('app.events', {
+        url: '/events',
         views: {
           'menuContent': {
-            templateUrl: 'templates/playlists.html',
-            controller: 'PlaylistsCtrl'
+            templateUrl: 'partials/events/events.html',
+            controller: 'EventsCtrl'
           }
         }
       })
 
-      .state('app.events', {
-        url: '/events',
+      .state('app.home', {
+        url: '/home',
         views: {
           'menuContent': {
-            templateUrl: 'templates/event_listing.html',
-            controller: 'EventsCtrl'
+            templateUrl: 'partials/home/home.html',
+            controller: 'HomeCtrl'
+          }
+        }
+      })
+
+      .state('app.volunteers', {
+        url: '/volunteers',
+        views: {
+          'menuContent': {
+            templateUrl: 'partials/volunteers/volunteers.html',
+            controller: 'VolunteersCtrl'
           }
         }
       })
@@ -81,33 +91,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.profiles', '
         }
       })
 
-      .state('employee-index', {
-        url: '/employees',
-        templateUrl: 'templates/employee-index.html',
-        controller: 'EmployeeIndexCtrl'
-      })
-
-      .state('employee-detail', {
-        url: '/employee/:employeeId',
-        templateUrl: 'templates/employee-detail.html',
-        controller: 'EmployeeDetailCtrl'
-      })
-
-      .state('employee-reports', {
-        url: '/employee/:employeeId/reports',
-        templateUrl: 'templates/employee-reports.html',
-        controller: 'EmployeeReportsCtrl'
-      })
-
       .state('app.single', {
-        url: '/playlists/:playlistId',
+        url: '/events/:eventId',
         views: {
           'menuContent': {
-            templateUrl: 'templates/playlist.html',
-            controller: 'PlaylistCtrl'
+            templateUrl: 'partials/events/event.html',
+            controller: 'EventCtrl'
           }
         }
       });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/home');
   });
