@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.home', 'starter.profiles', 'starter.events', 'starter.volunteers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.home', 'starter.profiles', 'starter.events', 'starter.volunteers', 'starter.apiservice'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -49,7 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.home', 'star
           }
         }
       })
-        .state('app.events', {
+      .state('app.events', {
         url: '/events',
         views: {
           'menuContent': {
@@ -82,11 +82,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.home', 'star
 
       .state('app.profile', {
         url: '/profile',
-        templateUrl: 'templates/profile.html',
         views: {
           'menuContent': {
             templateUrl: 'templates/profile.html',
             controller: 'ProfileCtrl'
+          }
+        }
+      })
+
+      .state('app.comics', {
+        url: '/comics',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/comics.html',
+            controller: 'ComicsController'
+          }
+        }
+      })
+
+      .state('app.comic', {
+        url: '/comic/:comicId',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/comic-detail.html',
+            controller: 'ComicDetailController'
           }
         }
       })
@@ -100,6 +119,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.home', 'star
           }
         }
       });
-    // if none of the above states are matched, use this as the fallback
+// if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
-  });
+  })
+;
