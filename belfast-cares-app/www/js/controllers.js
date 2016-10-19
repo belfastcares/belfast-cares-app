@@ -1,9 +1,18 @@
 angular.module('starter.controllers', [])
 
-  .controller('ComicsController', function (Comics, $scope, $ionicLoading) {
+  .controller('ComicsController', function (Comics,Organisations, $scope, $ionicLoading) {
     var _this = this;
 
     console.log('Comic');
+
+    Organisations.getOrganisations().then(function (response) {
+      $scope.organisations = response.data.results;
+    }).catch(function (response) {
+      console.log('Error')
+    }).finally(function () {
+      $ionicLoading.hide();
+    });
+
 
     $scope.$on('$ionicView.enter', function () {
       $ionicLoading.show();
