@@ -1,7 +1,7 @@
 {
   "name": "belfast-cares-app",
   "version": "1.1.1",
-  "description": "belfast-cares-app: An Ionic project",
+  "description": "Belfast Cares",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
