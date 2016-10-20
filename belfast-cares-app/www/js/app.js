@@ -140,6 +140,7 @@ angular.module('starter', ['ionic', 'starter.home', 'starter.profiles', 'starter
         }
       })
 
+
       .state('app.profile', {
         url: '/profile',
         views: {
