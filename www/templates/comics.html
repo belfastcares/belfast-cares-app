@@ -1,0 +1,12 @@
+<ion-view view-title="Comics">
+  <ion-content class="padding">
+    Comics
+
+    <ion-list>
+      <ion-item ng-repeat="comic in comics" href="#/app/comic/{{comic.id}}">
+        {{ comic.title }}
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
