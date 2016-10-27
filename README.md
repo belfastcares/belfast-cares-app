@@ -7,7 +7,7 @@
 - Java 8 JDK : http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 - Android SDK : https://developer.android.com/studio/index.html
 
-### Running the application
+### Setting up your environment
 
 ```
 npm install -g cordova
@@ -17,6 +17,11 @@ ionic lib update
 
 cd belfast-cares-app
 ionic platform add browser
+
+```
+
+### Running the App
+```
 ionic build browser
 ionic serve
 ```
