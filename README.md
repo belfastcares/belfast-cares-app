@@ -2,13 +2,12 @@
 
 ### Prerequisites
 
-npm installed
-git installed
-java8 JDK : http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-android studio : https://developer.android.com/studio/index.html
-JAVA_HOME set
+- NPM installed : https://nodejs.org/en/download/
+- Git installed : https://git-scm.com/download/win
+- Java 8 JDK : http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+- Android SDK : https://developer.android.com/studio/index.html
 
-run SDK manager : C:\Users\apoclyps\AppData\Local\Android\sdk\tools\android.bat
+### Running the application
 
 ```
 npm install -g cordova
@@ -16,30 +15,15 @@ npm install -g ionic
 
 ionic lib update
 
-ionic start belfast-cares-app sidemenu
-
-cd myApp
-ionic platform add ios
-ionic build ios
-ionic emulate ios
-```
-
-Make sure to cd into your new app directory:
-```
 cd belfast-cares-app
-```
-
-To run your app in the browser (great for initial development):
-```
+ionic platform add browser
+ionic build browser
 ionic serve
-```
-
-To run on iOS:
-```
-ionic run ios
 ```
 
 To run on Android:
 ```
+ionic platform add android
+ionic platform build android
 ionic run android
 ```
